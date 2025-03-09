@@ -5,7 +5,7 @@ item_apagar = True
 
 while True:
 
-    print ('Escolha uma opção p')
+    print ('Escolha uma opção ')
     botao = input ('[i]nsetir [a]pagar [l]istar [t]rocar: ').lower()
     item_apagar = True
 
@@ -60,6 +60,9 @@ while True:
     elif botao == 'l':
         for indice, nome in enumerate(lista_de_compras):
             print (indice, nome)
+        if len(lista_de_compras) == 0:
+            print ('Sua lista esta vazia')
+        
         
     else:
         print('Digite um valor valido')
