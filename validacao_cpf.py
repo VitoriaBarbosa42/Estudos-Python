@@ -2,15 +2,18 @@ while True:
     cpf = input ('Digite o CPF (apenas números) que gostaria de validar: ')
     print (f'O CPF "{cpf}" esta correto?')
     confirmacao = input ('[s]im - [n]ão --- [sair] se quiser encerrar o programa ').lower()
+    cpf = cpf.replace('.', '').replace('-', '').replace(',', '')
     soma_cpf1 = 0
     soma_cpf2 = 0
     n_multiplicador1 = 10
     n_multiplicador2 = 11
     digitos_int_cpf = []
 
+
     if confirmacao == 's':
-        
-        if len(cpf) == 11 and cpf.isdigit():
+
+        cpf_numero_repetido = cpf == cpf [0] * len(cpf)
+        if len(cpf) == 11 and cpf.isdigit() and cpf_numero_repetido == False:
             for i in cpf[:9]:
                 digitos_int_cpf.append (int(i))
 
@@ -41,7 +44,8 @@ while True:
                 print ('o cpf é invalido')
 
         else:
-            print ('Digite um valor valido') 
+            print ('Digite um valor valido')
+
     elif confirmacao == 'sair':
         print ('Volte sempre :)')
         break
