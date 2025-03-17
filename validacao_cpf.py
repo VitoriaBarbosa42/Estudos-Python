@@ -1,5 +1,5 @@
 while True:
-    cpf = input ('Digite o CPF (apenas números) que gostaria de validar: ')
+    cpf = input ('Digite o CPF que gostaria de validar: ')
     print (f'O CPF "{cpf}" esta correto?')
     confirmacao = input ('[s]im - [n]ão --- [sair] se quiser encerrar o programa ').lower()
     cpf = cpf.replace('.', '').replace('-', '').replace(',', '')
